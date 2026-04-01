@@ -171,6 +171,64 @@
       }
     }
 
+    /* ---- Thesis ---- */
+    .thesis p {
+      font-family: var(--serif);
+      font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text);
+      max-width: 40rem;
+    }
+
+    /* ---- Portfolio ---- */
+    .portfolio {
+      margin-bottom: 2.5rem;
+    }
+
+    .portfolio-item {
+      display: block;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 2rem 2rem;
+      transition: border-color 0.35s ease, transform 0.35s ease;
+      max-width: 24rem;
+    }
+
+    .portfolio-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .portfolio-item h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.01em;
+    }
+
+    .portfolio-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 0.01em;
+    }
+
+    .portfolio-cta {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .portfolio-cta a {
+      color: var(--accent);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .portfolio-cta a:hover {
+      border-bottom-color: var(--accent);
+    }
+
     /* ---- Connect ---- */
     .connect-links {
       display: flex;
@@ -255,6 +313,26 @@
         <p>Building and scaling business development at the intersection of technology and global markets.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Thesis -->
+  <section class="fade-in">
+    <div class="section-label">Investment Thesis</div>
+    <div class="thesis">
+      <p>I back pre-seed and seed founders building the infrastructure layer -- developer tools, API platforms, and fintech plumbing that other companies build on top of. I look for technical founders solving real problems with clear distribution advantages, not hype cycles.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="fade-in">
+    <div class="section-label">Portfolio</div>
+    <div class="portfolio">
+      <a href="https://www.ycombinator.com/companies/interfaze" target="_blank" rel="noopener" class="portfolio-item">
+        <h3>Interfaze</h3>
+        <span class="portfolio-meta">YC X26 &middot; AI model for deterministic developer tasks</span>
+      </a>
+    </div>
+    <p class="portfolio-cta">Building something? <a href="mailto:alex.walling19@gmail.com">I'd love to hear about it.</a></p>
   </section>
 
   <!-- Connect -->
