@@ -1,288 +1,289 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<html lang="en">
 <head>
-    <title>Alex Walling</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Responsive HTML5 Website landing Page for Developers">
-    <meta name="author" content="3rd Wave Media">    
-    <link rel="shortcut icon" href="favicon.ico">  
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.css">
-    <!-- github acitivity css -->
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-    <link rel="stylesheet" href="http://caseyscarborough.github.io/github-activity/github-activity-0.1.0.min.css">
-    
-    <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="css/styles.css">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-</head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Walling</title>
+  <meta name="description" content="Alex Walling — Head of Business Development at Nokia Network as Code. Angel investor. Based in Chicago.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    :root {
+      --bg: #0a0a0a;
+      --text: #f5f0eb;
+      --text-muted: #a09a93;
+      --accent: #c4a882;
+      --card-bg: #131211;
+      --card-border: #1f1d1a;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, Helvetica Neue, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(3rem, 10vw, 7.5rem);
+      letter-spacing: 0.04em;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: var(--text-muted);
+      max-width: 32rem;
+      letter-spacing: 0.02em;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      animation: drift 2.4s ease-in-out infinite;
+    }
+
+    .scroll-indicator span {
+      display: block;
+      width: 1px;
+      height: 2rem;
+      background: var(--text-muted);
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ---- Sections ---- */
+    section {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 7rem 2rem;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ---- About ---- */
+    .about p {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--text);
+      max-width: 40rem;
+    }
+
+    /* ---- Cards ---- */
+    .cards {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 2.5rem 2rem;
+      transition: border-color 0.35s ease, transform 0.35s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.01em;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 640px) {
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* ---- Connect ---- */
+    .connect-links {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .connect-links a {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+
+    .connect-links a:hover {
+      color: var(--accent);
+    }
+
+    .connect-links svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    /* ---- Fade-in ---- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-<div class="container">
-<div class="col-md-3">
-<!-- social buttons in header -->
-    <ul class="list-inline social-buttons">
-        <li><a target="_blank" href="https://www.facebook.com/LetsHackCU" style="padding-left:13px;"><i class="fa fa-facebook"></i></a>
-        </li>
-        <li><a target="_blank" href="https://twitter.com/HackCU" style="padding-left:11px;"><i class="fa fa-twitter"></i></a>
-        </li>
-        <li><a target="_blank" href="https://www.linkedin.com/profile/view?id=295970603&trk=spm_pic" style="padding-left:13px;"><i class="fa fa-linkedin"></i></a>
-        </li>
-        <li><a target="_blank" href="https://github.com/alexwalling" style="padding-left:13px;"><i class="fa fa-github"></i></a>
-        </li>
-    </ul>
-</div>
-<!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-            <li class="hidden active">
-                <a href="#page-top"></a>
-            </li>
-            <li>
-            <a href="index.html" href="#about">Main</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#about">About Me</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="My_Projects.html">My Projects</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="Work_Experience.html">Work Experience</a>
-            </li>
-        </ul>
-        <!-- /.navbar-collapse -->
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Alex Walling</h1>
+    <p>Building at the intersection of networks, innovation, and identity.</p>
+    <div class="scroll-indicator">
+      <span></span>
     </div>
-</div>
+  </section>
 
-<!-- /.container-fluid -->
-</nav>
-    <!-- ******HEADER****** -->
-    <header class="header">
-        <div class="container">
-            <img class="profile-image img-responsive pull-left" src="images/profile.png" alt="" />
-            <div class="profile-content pull-left">
-            
-                <h1 class="name">Alex Walling</h1>
-                <h2 class="desc">Computer Science Student - University of Colorado Boulder</h2>
-                <ul class="social list-inline">
-                    <li><a href="https://www.facebook.com/alex.walling19"><i class="fa fa-facebook-square"></i></a></li>
-                    <li><a href="https://twitter.com/AlexWalling"><i class="fa fa-twitter"></i></a></li>          
-                    <li><a href="https://github.com/alexwalling"><i class="fa fa-github-alt"></i></a></li>
-                    <li><a href="https://www.linkedin.com/profile/view?id=295970603&trk=spm_pic"><i class="fa fa-linkedin"></i></a></li>
-                </ul> 
-            </div><!--//profile-->
-            
-        </div><!--//container-->
-    </header><!--//header-->
-    
-    <div class="container sections-wrapper">
-        <div class="row">
-            <div class="primary col-md-8 col-sm-12 col-xs-12">
-                <section id = "about" class="about section">
-                    <div class="section-inner">
-                        <h2 class="heading">About Me</h2>
-                        <div class="content">
-                            <p>My name is Alex Walling and this is my website.  I am a computer science student at the University of Colorado, Boulder.  I am a co-founder and director of HackCU, which is the first collegiate national hackathon in Boulder.  My hobbies include programming, snowboarding, graphic design, photography, and adventuring.</p>
-        <p></p>
-        <p>If you have any questions or business inquires feel free to email me</p>
-                         
-                        </div><!--//content-->
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
-    
-               <section id="projects" class="latest section">
-                    <div class="section-inner">
-                        <h2 class="heading">My Projects</h2>
-                        <div class="content">
-                            <div class="item">
-                                <a href="http://hackcu.org/"><h3 class="title">HackCU</h3></a>
-                                <p>I am the co-founder and Director of Tech and Media for HackCU. &nbsp; HackCU 2015 was the first ever HackCU and the first major collegiate Hackathon in the rockie mountain region. &nbsp; I am very proud of the work my team and I did this year and what we have accomplished.
-                                </p>
-                                <a href="http://hackcu.org/">
-                                <img src="images/Logo.png" alt="" width="75%" height="75%"/>
-                                </a>
-                           </div><!--//item-->
-                           <br>
-                           <div class="item">
-                           <a href="Sharked_Graphics.html"><h3 class="title">Sharked Graphics</h3></a>
-                           <p>A couple years ago I go interested in graphic design so I began to teach myself. &nbsp; I began learning 3D animation(Cinema 4D), logo design(Photoshop &amp; Illustrator), &nbsp;&amp;&nbsp; Film Making(Final Cut Pro). &nbsp; My friends nickname for me is "Shark" and so my graphic design name is Sharked Graphics. &nbsp; <a href="Sharked_Graphics.html">Here</a> is some of my work.
-                           </p>
-                           <a href="Sharked_Graphics.html">
-                           <img src="images/Shark2.png" alt="" width="35%" height="35%" margin-right:"auto"/>
-                           </a>
-                           </div><!--//item-->
-                           
-                           <div class="item">
-                           <a href=""><h3 class="title">Coding</h3></a>
-                           <p>I am a computer science major at the University of Colorado, Boulder.  I have written programs for school, hackathons, work, and for fun.  It is something I enjoy doing and <a href="Coding.html">here</a> are a few of the programs I have written.
-                           </p>
-                           
-                           </div><!--//item-->
-                        </div><!--//content-->
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
-                
-                <section id = "experience" class="experience section">
-                    <div class="section-inner">
-                        <a href="Work_Experience.html"><h2 class="heading" href="Work_Experience.html">Work Experience</h2></a>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title">IT Intern - <span class="place"><a href="http://www.pinnacleactuaries.com/">Pinnacle Actuarial Resources, Inc.</a></span> <span class="year">(July 2014 - August 2014)</span></h3>
-                                <p></p>
-                            </div><!--//item-->
-                            
-                            <div class="item">
-                                <h3 class="title">Student Manager - <span class="place"><a href="http://illinoisstate.edu/">Illinois State University</a></span> <span class="year">(August 2012 - May 2013)</span></h3>
-                                    <p></p>
-                            </div><!--//item-->
-                            
-                            <div class="item">
-                                <h3 class="title">Help Desk Technician - <span class="place"><a href="http://illinoisstate.edu/">Illinois State University</a></span> <span class="year">(August 2010 - August 2012)</span></h3>
-                                
-                            </div><!--//item-->
-                            
-                            <div class="item">
-                            <h3 class="title">Sound Technician - <span class="place"><a href="http://wesley-umc.com/wesley/">Wesley United Methodist Church</a></span> <span class="year">(June 2009 - Present)</span></h3>
-                            
-                            </div><!--//item-->
-                            
-                            <div class="item2">
-                            <a href="Work_Experience.html"><h4 class="title">read more..</h4></a>
-                            
-                            </div><!--//item-->
-                            
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
-            </div><!--//primary-->
-            <div class="secondary col-md-4 col-sm-12 col-xs-12">
-                 <aside class="info aside section">
-                    <div class="section-inner">
-                        <h2 class="heading sr-only">Basic Information</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>Boulder, US</li>
-                                <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="#">alex.walling19@gmail.com</a></li>
-                                <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="http://hackcu.org">http://hackcu.org/</a></li>
-                                
-                            </ul>
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </aside><!--//aside-->
-                
-                <aside class="skills aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Skills</h2>
-                        <div class="content">
-                            <p class="intro"></p>
-                            <div class="skillset">
-                            
-                            
-                            <div class="item">
-                            <h3 class="level-title">Computer Hardware &amp; Repair<span class="level-label">Pro</span></h3>
-                            </div><!--//item-->
-                            
-                            <div class="item">
-                            <h3 class="level-title">MacOS<span class="level-label">Pro</span></h3>
-                            </div><!--//item-->
-                            
-                            <div class="item">
-                            <h3 class="level-title">Java, Python &amp; C++<span class="level-label">Good</span></h3>
-                            </div><!--//item-->
-                            
-                            <div class="item">
-                            <h3 class="level-title">Graphic Design<span class="level-label">Good</span></h3>
-                            </div><!--//item-->
-                            
-                            <div class="item">
-                            <h3 class="level-title">Windows<span class="level-label">Good</span></h3>
-                            </div><!--//item-->
-                            
+  <!-- About -->
+  <section class="about fade-in">
+    <div class="section-label">About</div>
+    <p>Head of Business Development at Nokia Network as Code. Angel investor backing early-stage developer tools and infrastructure. Based in Chicago.</p>
+  </section>
 
-                            </div>
-                            
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-                
-                <aside class="education aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Education</h2>
-                        <div class="content">
-                            <div class="item">                      
-                                <h3 class="title"><i class="fa fa-graduation-cap"></i> BS Computer Science</h3>
-                                <a href="http://www.colorado.edu/"><h4 class="university">University of Colorado, Boulder <span class="year">(2013-Present)</span></h4></a>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><i class="fa fa-graduation-cap"></i> High School Diploma</h3>
-                                <a href="http://uhigh.ilstu.edu/"><h4 class="university">University High School, Normal Illinois <span class="year">(2009-2013)</span></h4></a>
-                            </div><!--//item-->
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-               
-               
-                
-                <aside class="list music aside section">
-                    <div class="section-inner">
-                        <h2 class="heading2">Music &nbsp;<i class="fa fa-headphones"></i> <a href="#"></a></h2>
-                        <p>On of the things I enjoy a lot in life is music. Here is my soundcloud.com reposts.  It is mainly edm but I enjoy many many different types of music.
-                        </p>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/109145609&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=true”></iframe>
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-                
-                <aside class="list events aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Events and Hackathons</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-calendar"></i> <a href="http://hackcu.org" target="_blank">HackCU</a> (Boulder)</li>
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-              
-            </div><!--//secondary-->    
-        </div><!--//row-->
-    </div><!--//masonry-->
-    
-    <!-- ******FOOTER****** --> 
-    <footer class="footer">
-        <div class="container text-center">
-            
-        </div><!--//container-->
-    </footer><!--//footer-->
- 
-    <!-- Javascript -->          
-    <script type="text/javascript" src="plugins/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="plugins/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js"></script>    
-    <script type="text/javascript" src="plugins/jquery-rss/dist/jquery.rss.min.js"></script> 
-    
-    <!-- custom js -->
-    <script type="text/javascript" src="js/main.js"></script>            
+  <!-- What I Do -->
+  <section class="fade-in">
+    <div class="section-label">What I Do</div>
+    <div class="cards">
+      <div class="card">
+        <h3>Network as Code</h3>
+        <p>Making telecom networks programmable through developer APIs at Nokia.</p>
+      </div>
+      <div class="card">
+        <h3>Angel Investing</h3>
+        <p>Early-stage bets on developer tools and infrastructure.</p>
+      </div>
+      <div class="card">
+        <h3>Thought Leadership</h3>
+        <p>Writing about network APIs, fraud prevention, and the future of connectivity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect -->
+  <section class="fade-in">
+    <div class="section-label">Connect</div>
+    <div class="connect-links">
+      <a href="https://www.linkedin.com/in/alexwalling/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://x.com/alexwalling" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+      <a href="mailto:alex.walling19@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/></svg>
+        Email
+      </a>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Alex Walling</footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
 </body>
-</html> 
-
+</html>
